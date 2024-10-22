@@ -160,34 +160,3 @@ class LocalLoader(Loader):
 
         self._LOGGER.warning(f"Library content: {self._device_path_matcher}")
         return
-
-        
-    async def _get_directory_for_model(self, manufacturer: str, manufacturer_dir: str, search: set[str]) -> tuple[str, str] | None:
-        """Get the directory for a model. Can be an alias within the model.json"""
-        """BUGFIX: os.listdir also returns files!"""
-        dir_content = await self._hass.async_add_executor_job(os.walk, manufacturer_dir)
-        dir_content = await self._hass.async_add_executor_job(next, dir_content)
-        model_dirs = dir_content[1]
-        search_lower = {phrase.lower() for phrase in search}
-    
-        _LOGGER = logging.getLogger(__name__)
-  
-        for model_dir in model_dirs:
-            if model_dir.lower() in search_lower:
-                _LOGGER.warning("Found model as directory name: %s", model_dir)
-                return model_dir, os.path.join(manufacturer_dir, model_dir)
-    
-        """Check aliases within model.json files"""
-        
-        for model_dir in model_dirs:
-            json_data, directory = await self.load_model(manufacturer, model_dir)
-            aliases = json_data.get("aliases")
-            _LOGGER.warning("Aliases found in %s: %s", model_dir, aliases)
-            if aliases:
-                for alias in aliases:
-                    if alias.lower() in search_lower:
-                        _LOGGER.warning("Alias match %s in dir %s", alias, model_dir)
-                        return alias, os.path.join(manufacturer_dir, model_dir)
-        
-        return None
-    
