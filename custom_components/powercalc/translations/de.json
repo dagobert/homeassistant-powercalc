@@ -170,7 +170,7 @@
           "entity_id": "Die Basis-Entität von der die Leistung abgezogen wird.",
           "subtract_entities": "Wähle alle Entitäten, die von der Basis-Entität subtrahiert werden."
         },
-        "title": "Subtrahiere Gruppensensoren"
+        "title": "Subtrahierender Gruppensensor"
       },
       "group_tracked_untracked": {
         "data": {
@@ -185,31 +185,31 @@
           "create_energy_sensor": "Whether powercalc needs to create a kWh sensor",
           "create_utility_meters": "Powercalc soll Verbrauchszähler erstellen, die den Verbrauch täglich, stündlich usw. festhalten."
         },
-        "description": "Create a group sensor for all tracked and untracked power",
-        "title": "Erstellen eines Nachverfolgungs-Power-Sensor"
+        "description": "Erstellt einen Gruppensensor für alle nachverfolgte und nicht-nachverfolgte Leistung.",
+        "title": "Erstellen eines nachverfolgungenden Power-Sensor"
       },
       "group_tracked_untracked_manual": {
         "data": {
-          "group_tracked_entities": "Tracked entities"
+          "group_tracked_entities": "Nachverfolgte Entitäten"
         },
-        "description": "Select all the power sensors which are part of the tracked consumption. It is already automatically populated, but you can manually adjust it",
-        "title": "Select power entities"
+        "description": "Wähle alle Leistungssensoren (power), die Teil des nachverfolgten Verbrauchs sind. Sie werden automatisch hinzugefügt, aber man kann die Liste anpassen.",
+        "title": "Wähle Leistungsentitäten"
       },
       "library": {
         "data": {
           "confirm_autodisovered_model": "Bestätigen Sie das Modell"
         },
         "data_description": {
-          "confirm_autodisovered_model": "Wenn Sie nicht bestätigen möchten, können Sie den Hersteller und das Modell selbst eingeben"
+          "confirm_autodisovered_model": "Wenn Sie nicht bestätigen möchten, können Sie den Hersteller und das Modell selbst eingeben."
         },
-        "description": "Hersteller \"{manufacturer}\" und Modell \"{model}\" wurden für Ihre Gerät automatisch erkannt.{remarks}",
+        "description": "Hersteller \"{manufacturer}\" und Modell \"{model}\" wurden für Ihr Gerät automatisch erkannt.{remarks}",
         "title": "Bibliothek"
       },
       "library_multi_profile": {
         "data": {
-          "model": "Select model"
+          "model": "Modell auswählen"
         },
-        "description": "Manufacturer \"{manufacturer}\" and model \"{model}\" were automatically detected for your device. There are multiple profiles found for the entity which can potentially be used. Please look up the exact model of your device in [Powercalc library]({library_link}) and select the correct one",
+        "description": "Hersteller \"{manufacturer}\" und Modell \"{model}\" wurden für Ihr Gerät automatisch erkannt. There are multiple profiles found for the entity which can potentially be used. Please look up the exact model of your device in [Powercalc library]({library_link}) and select the correct one",
         "title": "Library"
       },
       "linear": {
@@ -244,8 +244,8 @@
         "menu_options": {
           "group_custom": "Standardgruppe",
           "group_domain": "Domänenbasierte Gruppe",
-          "group_subtract": "Subtract",
-          "group_tracked_untracked": "Tracked/untracked power"
+          "group_subtract": "Subtrahierende Gruppe",
+          "group_tracked_untracked": "Nachverfolgen der Leistung"
         },
         "title": "Choose the group type",
         "description": "Select the type of group sensor you want to create. Choose domain based group if you want to group all entities of a specific domain, or create a sensor summing all your energy sensors. Choose standard group otherwise."
